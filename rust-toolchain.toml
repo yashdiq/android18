@@ -1,0 +1,4 @@
+[toolchain]
+# gpui-kit 0.7.0's `gpui-pre-util` requires `slice::as_array`, stabilized
+# after 1.92; pin the whole workspace to 1.95.
+channel = "1.95.0"

@@ -1,0 +1,12 @@
+/target
+.DS_Store
+
+android-service/.idea
+android-service/.kotlin
+android-service/Android18.jks
+android-service/app/release
+dist/
+
+docs
+.clinerules
+.agents

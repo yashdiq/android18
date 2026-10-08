@@ -1,0 +1,27 @@
+[package]
+name = "android18-app"
+description = "Android18 native macOS desktop client built with GPUI Kit"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "android18"
+path = "src/main.rs"
+
+[dependencies]
+android18-core.workspace = true
+android18-transport.workspace = true
+gpui-kit.workspace = true
+image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }
+rust-embed.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+# App icon install (`src/platform.rs`). Versions match the ones gpui-pre
+# already pins in `Cargo.lock`, so nothing new is compiled in.
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-app-kit = { version = "0.3.2", features = ["NSApplication", "NSImage", "NSDockTile"] }
+objc2-foundation = { version = "0.3.2", features = ["NSData", "NSString"] }

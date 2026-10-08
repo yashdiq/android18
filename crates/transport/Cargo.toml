@@ -1,0 +1,18 @@
+[package]
+name = "android18-transport"
+description = "Real-device transport for Android18: HTTP device/search adapters, mDNS + adb discovery, file-backed desktop state and pairing tokens"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+android18-core.workspace = true
+async-trait.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+reqwest.workspace = true
+mdns-sd.workspace = true
+
+[dev-dependencies]
+futures.workspace = true

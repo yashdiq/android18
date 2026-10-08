@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = ["crates/core", "crates/transport", "crates/app"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+publish = false
+
+[workspace.dependencies]
+android18-core = { path = "crates/core" }
+android18-transport = { path = "crates/transport" }
+async-trait = "0.1"
+futures = "0.3"
+gpui-kit = "=0.7.0"
+rust-embed = { version = "8.12", features = ["include-exclude"] }
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+mdns-sd = "0.21"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json"] }
+serde_json = "1"
+
+# GPUI renders through Metal; keep debug builds fast enough to interact with.
+[profile.dev]
+opt-level = 1
